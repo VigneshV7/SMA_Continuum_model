@@ -8,7 +8,7 @@ figure; hold on
 
 for alpha = pi/10:pi/10:pi
     temp_points = [];
-    for s = 0:0.002:1
+    for s = 0:0.0002:1
         T_1 = homogeneousTransformMatrix(s, alpha, length);
         px = T_1(1, 4);
         py = T_1(2, 4);
@@ -19,8 +19,11 @@ end
 
 % Plot parameters
 grid on
-xlim([-0.1 0.8])
-ylim([-0.1 1.1])
+xmax = 0.8; xmin = -0.2; ymax = 1.2; ymin = -0.2;
+xlim([xmin xmax])
+ylim([ymin ymax])
+set(gca, 'xtick', xmin:0.2:xmax)
+set(gca, 'ytick', ymin:0.2:ymax)
 xlabel("x [m]")
 ylabel("y [m]")
 title("Soft continuum arm with constant curvature. L = 1m, alpha = pi/10:pi/10:pi")
@@ -51,8 +54,11 @@ for alpha = pi/10:pi/10:pi
     xlabel("x [m]")
     ylabel("y [m]")
     title("Soft continuum arm with constant curvature. L = 1m, alpha = pi/10:pi/10:pi")
-    xlim([-0.1 0.8])
-    ylim([-0.1 1.1])
+    xmax = 0.8; xmin = -0.2; ymax = 1.2; ymin = -0.2;
+    xlim([xmin xmax])
+    ylim([ymin ymax])
+    set(gca, 'xtick', xmin:0.2:xmax)
+    set(gca, 'ytick', ymin:0.2:ymax)
     grid on
     drawnow
     
