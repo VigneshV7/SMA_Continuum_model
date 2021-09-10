@@ -8,7 +8,7 @@ figure; hold on
 
 for alpha = pi/10:pi/10:pi
     temp_points = [];
-    for s = 0:0.0002:1
+    for s = 0:0.002:1
         T_1 = homogeneousTransformMatrix(s, alpha, length);
         px = T_1(1, 4);
         py = T_1(2, 4);
