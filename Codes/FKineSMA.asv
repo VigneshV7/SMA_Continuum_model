@@ -1,0 +1,4 @@
+function T = FKineSMA(sma_lengths, d, segment_lengths)
+
+
+end
