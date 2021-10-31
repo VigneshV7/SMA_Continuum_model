@@ -4,12 +4,7 @@
 % lengths which are the neutral fibre lengths per section. 
 % Output is the transformation matrix from the base to the tip of the SMA
 % continuum module
-function T = FKineSMA(sma_lengths, d, segment_lengths)
-num_segments = length(segment_lengths);
-T = eye(4);
-for i = 1:num_segments
-    beta = (sma_lengths(i, 2) - sma_lengths(i, 1))/(2*d);
-    T_temp = CCSegment(beta, segment_lengths(i));
-    T = T*T_temp;
-end
+function T = FKineSMA(sma_length, d, l_nf)
+beta = (l_nf - sma_length)/d;
+T = CCSegment(beta, l_nf);
 end
