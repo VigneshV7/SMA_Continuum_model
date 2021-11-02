@@ -109,3 +109,7 @@ for alpha = -2*pi:pi/100:2*pi
     end
     l_1_list = [l_1_list l_1_prime];
 end
+figure; hold on
+plot(l_1_list, alpha_list, '.')
+grid on
+hold off
