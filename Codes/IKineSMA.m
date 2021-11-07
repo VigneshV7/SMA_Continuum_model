@@ -1,14 +1,13 @@
 % Inverse kinematics for constant curvature assumption and assuming
 % constant distance between spacers
 % TODO have to check failure conditions
-function sma_lengths = IKineSMA(px, py, num_segments, L_nf, d)
-l_nf = L_nf/num_segments; % length of neutral fibre per section
-alpha = 2*atan2(px, py); % total section angle
-beta = alpha/num_segments;
-l_sma2 = d*beta + l_nf;
-l_sma1 = 2*l_nf - l_sma2;
-sma_lengths = [];
-for i = 1:num_segments
-    sma_lengths = [sma_lengths; [l_sma1, l_sma2]];
+function sma_lengths = IKineSMA(alpha, l_nf, d, num_spacers)
+if alpha == 0
+    l_1_prime = l_nf;
+    l_2_prime = l_nf;
+else
+    l_1_prime = ((l_nf-(alpha*d))*2*num_spacers*sin(alpha/(2*num_spacers)))/alpha;
+    l_2_prime = ((l_nf+(alpha*d))*2*num_spacers*sin(alpha/(2*num_spacers)))/alpha;
 end
+sma_lengths = [l_1_prime, l_2_prime];
 end

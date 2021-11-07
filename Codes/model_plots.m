@@ -45,7 +45,7 @@ plot(num_spacers, lin_sma_arr, num_spacers, l_1_arr,...
     num_spacers, point_per_line, '--')
 grid on
 xlabel("Number of spacers (1 indicates only one section)")
-ylabel("Length of sma [m]")
+ylabel("SMA length l_1(circular) and l_1^' (linear segment) [m]")
 title("Relation between l_1^l and l_1(Circular arc) with regards to num of spacers")
 lgd = legend('sma line', 'sma arc', '1% error', '0.2% error');
 lgd.Location = 'southeast';
